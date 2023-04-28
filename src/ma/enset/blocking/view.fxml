@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.blocking.ChatController">
+   <bottom>
+      <GridPane prefHeight="94.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="321.4" minWidth="10.0" prefWidth="321.4" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.20001220703125" minWidth="10.0" prefWidth="147.8" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TextField fx:id="textMessage" prefHeight="40.0" prefWidth="314.0" />
+            <Button mnemonicParsing="false" onAction="#send" prefHeight="30.0" prefWidth="80.0" text="Send" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="30.0" top="5.0" />
+         </padding>
+      </GridPane>
+   </bottom>
+   <top>
+      <GridPane vgap="10.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.39996337890625" minWidth="10.0" prefWidth="154.40003662109376" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.7999633789062" minWidth="10.0" prefWidth="324.7999633789062" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Host" GridPane.halignment="CENTER" />
+            <Label text="Port" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <TextField fx:id="textHost" promptText="Localhost" text="localhost" GridPane.columnIndex="1" />
+            <TextField fx:id="textPort" text="1234" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#connect" prefHeight="30.0" prefWidth="100.0" text="Connect" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" right="20.0" top="20.0" />
+         </padding>
+      </GridPane>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="listView" prefHeight="324.0" prefWidth="500.0" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
